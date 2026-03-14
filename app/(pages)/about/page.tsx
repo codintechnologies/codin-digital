@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import Link from 'next/link'
 import Header from '@/components/sections/Header'
 import Footer from '@/components/sections/Footer'
 import {
@@ -126,7 +127,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {howWeWork.map((item, index) => (
+              {howWeWork.map((item) => (
                 <div
                   key={item.title}
                   className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-medium hover:border-red-100 transition-all duration-300 flex flex-col"
@@ -258,18 +259,18 @@ export default function AboutPage() {
               adoptable, and implementable—so your teams can focus on what matters most.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
+              <Link
                 href="/contact"
                 className="px-8 py-3 rounded-lg bg-white text-red-600 font-semibold hover:bg-gray-100 transition-colors"
               >
                 Talk to our team
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/services"
                 className="px-8 py-3 rounded-lg border border-white/70 text-white font-semibold hover:bg-white/10 transition-colors"
               >
                 Explore our services
-              </a>
+              </Link>
             </div>
           </div>
         </section>

@@ -2,7 +2,6 @@ import Header from '@/components/sections/Header'
 import Footer from '@/components/sections/Footer'
 import CTA from '@/components/sections/CTA'
 import { ArrowRight, CheckCircle2, Server, Shield, Zap, Database, Workflow, Cloud } from 'lucide-react'
-import Link from 'next/link'
 
 // Define static params for the 6 platforms
 export function generateStaticParams() {
@@ -16,7 +15,15 @@ export function generateStaticParams() {
   ]
 }
 
-const platformData: Record<string, any> = {
+type Platform = {
+  title: string
+  badge: string
+  description: string
+  heroImage: string
+  modules: string[]
+}
+
+const platformData: Record<string, Platform> = {
   'fleet-mobility': {
     title: 'Fleet & Mobility Platform',
     badge: 'Logistics Core',
@@ -61,8 +68,9 @@ const platformData: Record<string, any> = {
   }
 }
 
-export default function PlatformPage({ params }: { params: { slug: string } }) {
-  const data = platformData[params.slug]
+export default async function PlatformPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const data = platformData[slug]
 
   if (!data) {
     return (

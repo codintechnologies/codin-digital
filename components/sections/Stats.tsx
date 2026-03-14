@@ -2,6 +2,13 @@
 
 import { useEffect, useState, useRef } from 'react'
 
+const STATS = [
+  { label: 'Platforms Deployed', value: 6, suffix: '', key: 'platforms' },
+  { label: 'Industries Served', value: 15, suffix: '+', key: 'industries' },
+  { label: 'Active Enterprise Clients', value: 500, suffix: '+', key: 'clients' },
+  { label: 'Assets & Transactions Managed', value: 100, suffix: 'M+', key: 'assets' }
+] as const
+
 export default function Stats() {
   const [inView, setInView] = useState(false)
   const [counts, setCounts] = useState({
@@ -12,13 +19,6 @@ export default function Stats() {
   })
   
   const sectionRef = useRef<HTMLElement>(null)
-
-  const stats = [
-    { label: 'Platforms Deployed', value: 6, suffix: '', key: 'platforms' },
-    { label: 'Industries Served', value: 15, suffix: '+', key: 'industries' },
-    { label: 'Active Enterprise Clients', value: 500, suffix: '+', key: 'clients' },
-    { label: 'Assets & Transactions Managed', value: 100, suffix: 'M+', key: 'assets' }
-  ]
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -41,7 +41,7 @@ export default function Stats() {
     if (!inView) return
 
     const animateCounters = () => {
-      stats.forEach((stat) => {
+      STATS.forEach((stat) => {
         let current = 0
         const increment = Math.max(1, stat.value / 100)
         const timer = setInterval(() => {
@@ -50,7 +50,7 @@ export default function Stats() {
             current = stat.value
             clearInterval(timer)
           }
-          setCounts(prev => ({
+          setCounts((prev: typeof counts) => ({
             ...prev,
             [stat.key]: Math.floor(current)
           }))
@@ -82,7 +82,7 @@ export default function Stats() {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-          {stats.map((stat, index) => (
+          {STATS.map((stat, index) => (
             <div
               key={index}
               className="animate-fade-in-up"

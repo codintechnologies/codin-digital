@@ -13,7 +13,13 @@ export function generateStaticParams() {
   ]
 }
 
-const industryData: Record<string, any> = {
+type Industry = {
+  title: string
+  description: string
+  kpis: string[]
+}
+
+const industryData: Record<string, Industry> = {
   'agriculture': {
     title: 'Agriculture & Agri-Tech',
     description: 'Transforming global food supply chains with precision logistics and traceability.',
@@ -41,8 +47,9 @@ const industryData: Record<string, any> = {
   }
 }
 
-export default function IndustryPage({ params }: { params: { slug: string } }) {
-  const data = industryData[params.slug]
+export default async function IndustryPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const data = industryData[slug]
 
   if (!data) {
     return (

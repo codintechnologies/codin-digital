@@ -14,7 +14,13 @@ export function generateStaticParams() {
   ]
 }
 
-const serviceData: Record<string, any> = {
+type Service = {
+  title: string
+  description: string
+  features: string[]
+}
+
+const serviceData: Record<string, Service> = {
   'ai-data': {
     title: 'AI and Data Engineering',
     description: 'Transform your enterprise data into predictive foresight with custom machine learning pipelines.',
@@ -47,8 +53,9 @@ const serviceData: Record<string, any> = {
   }
 }
 
-export default function ServicePage({ params }: { params: { slug: string } }) {
-  const data = serviceData[params.slug]
+export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const data = serviceData[slug]
 
   if (!data) {
     return (
