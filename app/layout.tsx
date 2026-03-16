@@ -38,6 +38,9 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  icons: {
+    icon: "/favicon.ico",
+  },
   metadataBase: new URL("https://codin.com"),
   alternates: {
     canonical: "/",
