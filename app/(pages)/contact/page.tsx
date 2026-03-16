@@ -32,13 +32,13 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: 'Phone',
-      details: '+255 772 102 069',
+      details: '+255 693 101 473',
       subtext: 'Mon-Fri 8am-6pm EAT'
     },
     {
       icon: Mail,
       title: 'Email',
-      details: 'kelvinfleetco@gmail.com',
+      details: 'info@codin.co.tz',
       subtext: 'We reply within 24 hours'
     },
     {
@@ -97,7 +97,7 @@ export default function ContactPage() {
                 Contact Our Team
               </h1>
               <p className="text-xl text-gray-600">
-                Get in touch with our enterprise systems experts. We&apos;re here to architect your transformation 
+                Get in touch with our enterprise systems experts. We&apos;re here to architect your transformation
                 and map out your digital future.
               </p>
             </div>
@@ -136,7 +136,7 @@ export default function ContactPage() {
                   </p>
                   <div className="flex items-center space-x-2">
                     <Phone className="w-4 h-4 text-primary-500" />
-                    <span className="font-semibold text-primary-500">+255 123 999-HELP</span>
+                    <span className="font-semibold text-primary-500">+255 618 307 041-HELP</span>
                   </div>
                 </div>
               </div>
@@ -147,7 +147,7 @@ export default function ContactPage() {
                   <h2 className="text-2xl font-bold text-gray-900 mb-8">
                     Send us a Message
                   </h2>
-                  
+
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
