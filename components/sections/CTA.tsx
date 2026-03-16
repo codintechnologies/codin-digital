@@ -13,25 +13,27 @@ export default function CTA() {
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             Join leading governments and global enterprises that rely on Codin Technologies for their mission-critical platform architectures and digital operations.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="group text-lg px-8 py-4"
               icon={<ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />}
               iconPosition="right"
             >
               Explore Use Cases
             </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="text-lg px-8 py-4"
-              icon={<Calendar className="w-5 h-5" />}
-              iconPosition="left"
-            >
-              Request Consultation
-            </Button>
+            <Link href="/contact">
+              <Button
+                variant="outline"
+                size="lg"
+                className="text-lg px-8 py-4"
+                icon={<Calendar className="w-5 h-5" />}
+                iconPosition="left"
+              >
+                Request Consultation
+              </Button>
+            </Link>
           </div>
 
           {/* Trust badges */}

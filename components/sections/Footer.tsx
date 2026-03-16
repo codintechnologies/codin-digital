@@ -2,14 +2,14 @@
 
 import React from 'react'
 import Link from 'next/link'
-import { 
-  MapPin, 
-  Phone, 
-  Mail, 
-  Globe, 
-  Facebook, 
-  Twitter, 
-  Linkedin, 
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Globe,
+  Facebook,
+  Twitter,
+  Linkedin,
   Instagram,
   ArrowRight
 } from 'lucide-react'
@@ -63,7 +63,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-gray-900 text-white">
-        {/* Main Footer Content */}
+      {/* Main Footer Content */}
       <div className="container-custom py-16">
         <div className="grid lg:grid-cols-2 xl:grid-cols-6 gap-8 lg:gap-12">
           {/* Company Info */}
@@ -77,7 +77,7 @@ const Footer = () => {
                 <div className="text-sm text-gray-400">Enterprise Digital Platforms</div>
               </div>
             </div>
-            
+
             <p className="text-gray-300 mb-6 leading-relaxed">
               Engineering Intelligent Platforms for Enterprise Transformation. We build, operate, and scale enterprise software across industries globally.
             </p>
@@ -86,11 +86,11 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-gray-300">
                 <MapPin className="w-4 h-4 text-primary-400" />
-                <span>Global Enterprise Headquarters</span>
+                <span>Codin Headquarters</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-300">
                 <Phone className="w-4 h-4 text-primary-400" />
-                <span>+1 (800) Enterprise</span>
+                <span>+255 693 101 473</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-300">
                 <Mail className="w-4 h-4 text-primary-400" />
@@ -120,7 +120,7 @@ const Footer = () => {
             <ul className="space-y-2">
               {footerLinks.products.map((link) => (
                 <li key={link.name}>
-                  <Link 
+                  <Link
                     href={link.href}
                     className="text-gray-300 hover:text-primary-400 transition-colors text-sm"
                   >
@@ -149,7 +149,7 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          
+
           <div className="space-y-8">
             <div>
               <h3 className="text-white font-semibold mb-4">Services</h3>
@@ -175,7 +175,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 {footerLinks.company.map((link) => (
                   <li key={link.name}>
-                    <Link 
+                    <Link
                       href={link.href}
                       className="text-gray-300 hover:text-primary-400 transition-colors text-sm"
                     >
@@ -193,7 +193,7 @@ const Footer = () => {
             <ul className="space-y-2">
               {footerLinks.resources.map((link) => (
                 <li key={link.name}>
-                  <Link 
+                  <Link
                     href={link.href}
                     className="text-gray-300 hover:text-primary-400 transition-colors text-sm"
                   >
@@ -220,7 +220,7 @@ const Footer = () => {
                 </Link>
               ))}
             </div>
-            
+
             <div className="flex items-center space-x-6 text-sm text-gray-400">
               <Link href="/privacy" className="hover:text-white transition-colors">
                 Privacy Policy

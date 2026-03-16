@@ -3,6 +3,7 @@
 import React from 'react'
 import { ArrowRight, Play, Shield, Zap, TrendingUp, MapPin } from 'lucide-react'
 import Button from '../ui/Button'
+import Link from 'next/link'
 
 const Hero = () => {
   const features = [
@@ -35,7 +36,7 @@ const Hero = () => {
       {/* Floating Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-32 h-32 bg-red-100 rounded-full blur-3xl animate-bounce-gentle"></div>
-        <div className="absolute bottom-20 right-10 w-40 h-40 bg-gray-100 rounded-full blur-3xl animate-bounce-gentle" style={{animationDelay: '1s'}}></div>
+        <div className="absolute bottom-20 right-10 w-40 h-40 bg-gray-100 rounded-full blur-3xl animate-bounce-gentle" style={{ animationDelay: '1s' }}></div>
         <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-red-50 rounded-full blur-2xl animate-pulse"></div>
       </div>
 
@@ -49,9 +50,9 @@ const Hero = () => {
               <TrendingUp className="w-4 h-4 text-red-600" />
               <span className="text-sm font-medium text-gray-800">Enterprise Software & AI Engineering</span>
             </div>
-            
+
             {/* Main Headline */}
-            <div className="space-y-6 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+            <div className="space-y-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
                 <span className="block text-gray-900">Engineering Intelligent</span>
                 <span className="block text-red-600">Platforms for Enterprise</span>
@@ -62,26 +63,28 @@ const Hero = () => {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-center gap-4 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
-              <Button 
-                size="xl" 
+            <div className="flex flex-col sm:flex-row items-center gap-4 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+              <Button
+                size="xl"
                 className="group bg-red-600 hover:bg-red-700 text-white"
                 icon={<ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />}
                 iconPosition="right"
               >
                 Explore Our Platforms
               </Button>
-              <Button 
-                variant="outline" 
-                size="xl" 
-                className="border-gray-300 text-gray-700 hover:bg-gray-50"
-              >
-                Request Consultation
-              </Button>
+              <Link href="/contact">
+                <Button
+                  variant="outline"
+                  size="xl"
+                  className="border-gray-300 text-gray-700 hover:bg-gray-50"
+                >
+                  Request Consultation
+                </Button>
+              </Link>
             </div>
-            
+
             {/* Tertiary CTA */}
-            <div className="pt-2 animate-fade-in-up" style={{animationDelay: '0.5s'}}>
+            <div className="pt-2 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
               <a href="#work-with-us" className="inline-flex items-center space-x-2 text-gray-600 hover:text-red-600 transition-colors font-medium">
                 <span>Work With Us &ndash; Build SaaS Together</span>
                 <ArrowRight className="w-4 h-4" />
@@ -89,7 +92,7 @@ const Hero = () => {
             </div>
 
             {/* Trust Indicators */}
-            <div className="pt-8 animate-fade-in-up" style={{animationDelay: '0.6s'}}>
+            <div className="pt-8 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
               <p className="text-gray-500 text-sm mb-4 font-medium uppercase tracking-wider">Powering Global Enterprises</p>
               <div className="flex flex-wrap gap-4">
                 <div className="flex items-center space-x-2 bg-gray-50 rounded-full px-4 py-2 border border-gray-200">
@@ -97,11 +100,11 @@ const Hero = () => {
                   <span className="text-gray-700 text-sm font-medium">6+ Core Platforms</span>
                 </div>
                 <div className="flex items-center space-x-2 bg-gray-50 rounded-full px-4 py-2 border border-gray-200">
-                  <div className="w-2 h-2 bg-red-600 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                  <div className="w-2 h-2 bg-red-600 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
                   <span className="text-gray-700 text-sm font-medium">15+ Industries Served</span>
                 </div>
                 <div className="flex items-center space-x-2 bg-gray-50 rounded-full px-4 py-2 border border-gray-200">
-                  <div className="w-2 h-2 bg-red-600 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+                  <div className="w-2 h-2 bg-red-600 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
                   <span className="text-gray-700 text-sm font-medium">AI-Driven Insights</span>
                 </div>
               </div>
@@ -109,14 +112,14 @@ const Hero = () => {
           </div>
 
           {/* Right Column - Features & Stats */}
-          <div className="space-y-8 animate-fade-in-up" style={{animationDelay: '0.8s'}}>
+          <div className="space-y-8 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
             {/* Feature Cards */}
             <div className="grid gap-6">
               {features.map((feature, index) => (
-                <div 
+                <div
                   key={index}
                   className="bg-white border border-gray-200 shadow-sm rounded-2xl p-6 hover:shadow-md transition-all duration-300 card-hover group"
-                  style={{animationDelay: `${0.8 + index * 0.1}s`}}
+                  style={{ animationDelay: `${0.8 + index * 0.1}s` }}
                 >
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors">
